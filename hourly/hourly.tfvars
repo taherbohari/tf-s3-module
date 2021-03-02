@@ -1,4 +1,4 @@
-bucket = "terraform-test-hourly"
+prefix = "terraform-test"
 acl           = "private"
 force_destroy = true
 attach_policy = true

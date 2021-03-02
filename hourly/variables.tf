@@ -1,13 +1,6 @@
-variable "bucket"{
-  description 	= "Name of the S3 bucket. Must be unique"
+variable "prefix"{
+  description 	= "Prefix of the S3 bucket. Must be unique"
   type		= string
-  default     	= null
-}
-
-variable "bucket_prefix"{
-  description	= "Creates a unique bucket name beginning with the specified prefix."
-  type		= string
-  default     	= null
 }
 
 variable "request_payer"{

@@ -16,14 +16,13 @@ provider "aws" {
 
 module "s3-bucket" {
   source 		= "../modules/s3/"
-  bucket 		= var.bucket
+  bucket 		= "${var.prefix}-hourly"
   request_payer 	= var.request_payer
   create_bucket 	= var.create_bucket
   acceleration_status 	= var.acceleration_status
   acl 			= var.acl
   tags 			= var.tags
   force_destroy 	= var.force_destroy
-  bucket_prefix 	= var.bucket_prefix
   versioning 		= var.versioning
   lifecycle_rule 	= var.lifecycle_rule
   logging 		= var.logging
