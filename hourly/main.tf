@@ -28,7 +28,8 @@ module "s3-bucket" {
   logging 		= var.logging
   website 		= var.website
 
-  policy 		  = var.policy
+#  policy 		  = var.policy
+  policy_file		  = var.policy_file
   attach_policy 	  = var.attach_policy
   attach_public_policy 	  = var.attach_public_policy
   block_public_acls 	  = var.block_public_acls

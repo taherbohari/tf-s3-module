@@ -1,4 +1,5 @@
 prefix = "terraform-test"
+policy_file = "/tmp/tf-s3-module/hourly/policy.tpl"
 acl           = "private"
 force_destroy = true
 attach_policy = true
@@ -7,9 +8,10 @@ policy        = <<POLICY
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "PublicRead",
       "Action": "s3:*",
       "Effect": "Allow",
-      "Resource": "arn:aws:s3:::terraform-test-hourly",
+      "Resource": ["arn:aws:s3:::for-policy/*"],
       "Principal": "*"
     }
   ]

@@ -128,8 +128,9 @@ resource "aws_s3_bucket_public_access_block" "friday" {
 }
 
 resource "aws_s3_bucket_policy" "friday" {
-  count = var.create_bucket && var.attach_policy ? 1 : 0
+  count = var.create_bucket && var.attach_policy && (var.policy_file != null) ? 1 : 0
 
   bucket = aws_s3_bucket.friday[0].id
-  policy = var.policy
+#  policy = var.policy
+  policy = templatefile(var.policy_file, { s3_arn = aws_s3_bucket.friday[0].arn })
 }

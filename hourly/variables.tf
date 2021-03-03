@@ -115,3 +115,9 @@ variable "attach_elb_log_delivery_policy"{
   type		= bool
   default	= false
 }
+
+variable "policy_file"{
+  description 	= "Policy file path"
+  type		= string
+  default	= null
+}
