@@ -1,5 +1,5 @@
-prefix = "terraform-test"
-policy_file = "/tmp/tf-s3-module/hourly/policy.tpl"
+prefix        = "terraform-test"
+policy_file   = "/tmp/tf-s3-module/hourly/policy.tpl"
 acl           = "private"
 force_destroy = true
 attach_policy = true
@@ -23,20 +23,20 @@ logging = {
 
 lifecycle_rule = [
   {
-    id      = "myrule"
-    enabled = true
-    prefix  = "hourly/"
+    id                                     = "myrule"
+    enabled                                = true
+    prefix                                 = "hourly/"
     abort_incomplete_multipart_upload_days = 7
     transition = [
       { days          = 30
         storage_class = "ONEZONE_IA"
-      }, 
+      },
       { days          = 60
         storage_class = "GLACIER"
       }
     ]
-    expiration = { days = 90 }
-    noncurrent_version_expiration = {  days = 90 }
+    expiration                    = { days = 90 }
+    noncurrent_version_expiration = { days = 90 }
     noncurrent_version_transition = [
       {
         days          = 30
@@ -49,7 +49,7 @@ lifecycle_rule = [
 server_side_encryption_configuration = {
   rule = {
     apply_server_side_encryption_by_default = {
-      sse_algorithm     = "aws:kms"
+      sse_algorithm = "aws:kms"
     }
   }
 }
