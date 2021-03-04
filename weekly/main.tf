@@ -1,6 +1,6 @@
 provider "aws" {
   region                  = "us-west-2"
-  profile                 = "friday"
+  profile                 = "default"
 }
 
 module "s3-bucket" {
