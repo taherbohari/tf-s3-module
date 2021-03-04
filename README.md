@@ -53,7 +53,7 @@ terraform plan -var-file hourly.tfvars
 terraform apply -var-file hourly.tfvars
 ```
 #### 6. Repeat steps 2 to 5 for daily and weekly buckets
-#### Ways to pass variables to terraform module
+#### 7. Ways to pass variables to terraform module
 - Using .tfvars file (as seen above)
 ```
 cd ./tf-s3-module/hourly
